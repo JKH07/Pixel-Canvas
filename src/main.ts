@@ -108,6 +108,9 @@ function createGrid(): void {
 
       content!.appendChild(cell);
     }
+    undoStack = [getGridState().map(s => ({ ...s }))];
+    redoStack = [];
+    updateButtons();
 }
 function generateHEX():string{
   var col=Math.floor(Math.random()*256);

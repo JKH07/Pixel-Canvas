@@ -103,6 +103,9 @@ function createGrid() {
         });
         content.appendChild(cell);
     }
+    undoStack = [getGridState().map(s => (Object.assign({}, s)))];
+    redoStack = [];
+    updateButtons();
 }
 function generateHEX() {
     var col = Math.floor(Math.random() * 256);
